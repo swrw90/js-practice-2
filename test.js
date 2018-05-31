@@ -41,3 +41,9 @@ let numberMatchGame = (userNum) => {
 
 // numberMatchGame(2);
 
+// Write a JavaScript program to compute the sum of the two given integers. If the two values are same, then returns triple their sum.
+
+let computeSum = (a, b) => a === b ? (a + b) * 3 : a + b
+
+// console.log(computeSum(3, 3));
+
