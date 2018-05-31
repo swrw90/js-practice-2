@@ -135,3 +135,12 @@ let modifyString = str => {
 let includesJava = str => str.includes("Java")
 // console.log(includesJava("Javascript"));
 
+// Write a JavaScript program to find the largest of three given integers.
+
+let determineGreatestInt = (a, b, c) => {
+    console.log(Math.max(a,b, c))
+}
+
+// determineGreatestInt(2,43,15)
+// Write a JavaScript program to create new string with first 3 characters are in lower case. 
+// If the string length is less than 3 convert all the characters in upper case.
