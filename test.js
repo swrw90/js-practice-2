@@ -47,3 +47,11 @@ let computeSum = (a, b) => a === b ? (a + b) * 3 : a + b
 
 // console.log(computeSum(3, 3));
 
+// Write a JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50. 
+
+let checkNumbers = (a, b) => a === 50 || b === 50 || a + b === 50
+
+// console.log(checkNumbers(5, 10));
+
+// Write a JavaScript program to check a given integer is within 20 of 100 or 400
+
