@@ -55,3 +55,29 @@ let checkNumbers = (a, b) => a === 50 || b === 50 || a + b === 50
 
 // Write a JavaScript program to check a given integer is within 20 of 100 or 400
 
+let isWithinTwenty = num => num > 79 && num < 121 || num > 379 && num < 421
+// console.log(isWithinTwenty(420));
+
+// Write a JavaScript program to check from two given integers, if one is positive and one is negative.
+
+// let isPositiveOrNegative = (a, b) => a % 2 === 0 || b % 2 === 0 ? console.log("Positive") : console.log("Negative")
+
+// isPositiveOrNegative(15, 10);
+
+//or Math.sign or...
+
+let isPositiveOrNegative = (a, b) => {
+
+    if (a % 2 === 0 && b % 2 === 1) {
+        console.log(a + " Is positive and " + b + " is negative")
+    } else if (a % 2 === 1 && b % 2 === 0) {
+        console.log(a + " Is negative and " + b + " is positive")
+    } else if (a % 2 === 0 && b % 2 === 0) {
+        console.log("Both numbers are positive")
+    } else {
+        console.log("Both numbers are negative")
+    }
+}
+
+// isPositiveOrNegative(10, 10);
+
