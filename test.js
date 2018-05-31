@@ -81,3 +81,57 @@ let isPositiveOrNegative = (a, b) => {
 
 // isPositiveOrNegative(10, 10);
 
+// Write a JavaScript program to create a new string adding "Py" in front of a given string. 
+// If the given string begins with "Py" then return the original string.
+
+let createNewString = str => {
+    if (str.includes("Py")) {
+        return str
+    } else {
+        let strArr = str.split("");
+        strArr.unshift("Py")
+        return strArr.join("")
+    }
+}
+
+// console.log(createNewString(""));
+
+// Write a JavaScript program to remove a character at the specified position of a given string 
+// and return the new string. 
+
+let removeCharacter = (str, index) => {
+    let strArr = str.split("")
+    strArr.splice(index, 1)
+    console.log(strArr.join(""))
+}
+
+// removeCharacter("text", 2)
+
+
+// Write a JavaScript program to create a new string from a given string changing the position of first 
+// and last characters. The string length must be greater than or equal to 1
+
+let modifyString = str => {
+
+    if (str.length >= 1) {
+        let strArr = str.split("")
+        let lastChar = strArr.splice(str.length - 1, 1)
+        let firstChar = strArr.splice(0, 1)
+
+        strArr.push(firstChar)
+        strArr.unshift(lastChar)
+
+        let newStr = strArr.join("")
+        console.log(newStr)
+    } else {
+        console.log("Not a valid entry")
+    }
+}
+
+// modifyString()
+
+// Write a JavaScript program to check if a string starts with 'Java' and false otherwise.
+
+let includesJava = str => str.includes("Java")
+// console.log(includesJava("Javascript"));
+
