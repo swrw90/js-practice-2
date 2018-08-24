@@ -2,7 +2,7 @@
 // Today is : Friday. Current time is : 4 PM : 50 : 22
 // console.log(date.toDateString()) <== Cool
 
- // Create days array with all the days.
+// Create days array with all the days.
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 
 // Date object assigned to a variable called date.
@@ -56,7 +56,7 @@ let checkNumbers = (a, b) => a === 50 || b === 50 || a + b === 50
 // Write a JavaScript program to check a given integer is within 20 of 100 or 400
 
 let isWithinTwenty = num => num > 79 && num < 121 || num > 379 && num < 421
-// console.log(isWithinTwenty(420));
+//console.log(isWithinTwenty(420));
 
 // Write a JavaScript program to check from two given integers, if one is positive and one is negative.
 
@@ -67,15 +67,24 @@ let isWithinTwenty = num => num > 79 && num < 121 || num > 379 && num < 421
 //or Math.sign or...
 
 let isPositiveOrNegative = (a, b) => {
+    // lol wtf?
+    // if (a % 2 === 0 && b % 2 === 1) {
+    //     console.log(a + " Is positive and " + b + " is negative")
+    // } else if (a % 2 === 1 && b % 2 === 0) {
+    //     console.log(a + " Is negative and " + b + " is positive")
+    // } else if (a % 2 === 0 && b % 2 === 0) {
+    //     console.log("Both numbers are positive")
+    // } else {
+    //     console.log("Both numbers are negative")
+    // }
 
-    if (a % 2 === 0 && b % 2 === 1) {
-        console.log(a + " Is positive and " + b + " is negative")
-    } else if (a % 2 === 1 && b % 2 === 0) {
-        console.log(a + " Is negative and " + b + " is positive")
-    } else if (a % 2 === 0 && b % 2 === 0) {
-        console.log("Both numbers are positive")
+    // that's better lol
+    if (a > 0) {
+        console.log("positive")
+    } else if (a < 0) {
+        console.log("negative")
     } else {
-        console.log("Both numbers are negative")
+        console.log("neither")
     }
 }
 
@@ -84,17 +93,20 @@ let isPositiveOrNegative = (a, b) => {
 // Write a JavaScript program to create a new string adding "Py" in front of a given string. 
 // If the given string begins with "Py" then return the original string.
 
+
 let createNewString = str => {
-    if (str.includes("Py")) {
+    let strToCheck = "Py";
+
+    if (str.startsWith(strToCheck)) {
         return str
     } else {
-        let strArr = str.split("");
-        strArr.unshift("Py")
-        return strArr.join("")
+        return strToCheck + str
     }
+
+    // return str.startsWith(strToCheck) ? str : strToCheck + str   
 }
 
-// console.log(createNewString(""));
+// console.log(createNewString("Something"));
 
 // Write a JavaScript program to remove a character at the specified position of a given string 
 // and return the new string. 
@@ -105,7 +117,7 @@ let removeCharacter = (str, index) => {
     console.log(strArr.join(""))
 }
 
-// removeCharacter("text", 2)
+// removeCharacter("yusuke", 5);
 
 
 // Write a JavaScript program to create a new string from a given string changing the position of first 
@@ -115,8 +127,11 @@ let modifyString = str => {
 
     if (str.length >= 1) {
         let strArr = str.split("")
-        let lastChar = strArr.splice(str.length - 1, 1)
-        let firstChar = strArr.splice(0, 1)
+        // let lastChar = strArr.splice(str.length - 1, 1)
+        // let firstChar = strArr.splice(0, 1)
+
+        let firstChar = strArr.shift();
+        let lastChar = strArr.pop();
 
         strArr.push(firstChar)
         strArr.unshift(lastChar)
@@ -128,19 +143,65 @@ let modifyString = str => {
     }
 }
 
-// modifyString()
+// modifyString("Something")
 
-// Write a JavaScript program to check if a string starts with 'Java' and false otherwise.
+// Write a JavaScript program to check if a string starts with 'Java' and false otherwise (case insensitive).
 
-let includesJava = str => str.includes("Java")
+let includesJava = str => str.startsWith("Java")
 // console.log(includesJava("Javascript"));
+
+let java = "java"
+let includezJava = str => str.toLowerCase().startsWith("java");
+
+//console.log(includezJava("Javascript"));
 
 // Write a JavaScript program to find the largest of three given integers.
 
 let determineGreatestInt = (a, b, c) => {
-    console.log(Math.max(a,b, c))
+    // console.log(Math.max(a, b, c))
+
+    var numbers = [a, b, c];
+    var largestNumber = 0
+
+    for (i = 0; i < numbers.length; i++) {
+        if (numbers[i] > largestNumber) {
+            largestNumber = numbers[i];
+        }
+    }
+
+    return largestNumber
 }
 
 // determineGreatestInt(2,43,15)
+
 // Write a JavaScript program to create new string with first 3 characters are in lower case. 
 // If the string length is less than 3 convert all the characters in upper case.
+
+let changeStringCase = (str) => {
+    if (str.length < 3) {
+        return str.toUpperCase()
+    } else {
+        let strArr = str.split("");
+        let newArr = [];
+
+        for (var i = 0; i < strArr.length; i++) {
+            if (i < 3) {
+                newArr.push(strArr[i].toLowerCase())
+            } else {
+                newArr.push(strArr[i])
+            }
+        }
+
+        return newArr.join("")
+
+    }
+}
+
+// console.log(changeStringCase("SOMethinG"));
+
+// Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.
+// let applicant = "Seth Watson"
+
+let filterApplicant = applicant => applicant === "Seth Watson" ? console.log("You made the right choice!") : console.log("Wrong choice, try again")
+
+// filterApplicant("sampson")
