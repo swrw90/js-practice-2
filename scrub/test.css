@@ -7,6 +7,12 @@
     background-color: gray;
 }
 
+.main-video {
+width: 498px;
+height: 890px;
+border: black solid 1px;
+}
+
 .timeline {
     height: 3px;
     width: 902px;

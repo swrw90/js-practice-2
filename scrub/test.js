@@ -3,6 +3,9 @@ const marker = document.querySelector('.marker');
 const scrubberItems = document.querySelectorAll('.scrubber-item');
 const timeline = document.querySelector('.timeline');
 const scrubberMenu = document.querySelector('.scrubber-menu');
+const timelineLength = Math.floor(Math.random() * 100) + 1;
+const mainVideo = document.querySelector('.main-video');
+console.log(mainVideo)
 
 timeline.addEventListener('click', positionScrubber);
 
